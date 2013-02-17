@@ -1,0 +1,12 @@
+﻿@using System.Data.Entity.Design.PluralizationServices
+@using System.Threading
+
+@helper Pluralise(int count, string singular)
+{
+    @(count == 1 ? singular : PluralizationService.CreateService(Thread.CurrentThread.CurrentUICulture).Pluralize(singular));
+}
+
+@helper Pluralise(int count, string singular, string plural)
+{
+    @(count == 1 ? singular : plural);
+}

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var random = new Random();
+}
+
+<h3>This list of tests is from <a href="http://www.hanselman.com/blog/FunWithNounPluralizationLibrariesAndTheNETFramework.aspx">Hanselman's blog post about pluralisation in .NET</a></h3>
+<ol class="round">
+       @foreach(var item in new[] {"penguin", "goose","deer","sheep","wolf","volcano","aircraft","alumna","alumnus","house","fungus"}){
+           var count = random.Next(0,3); 
+           <li>
+               There @StringHelper.Pluralise(count,"is", "are") @count @StringHelper.Pluralise(count, item)
+           </li>
+       }
+</ol>
